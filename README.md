@@ -1,7 +1,2 @@
-# DataViz
-Start a http-server in this folder to read assignment 2.
-Use:
-
-´
-python3 -m http.server
-´
+# Social graphs
+This is the code behind the page https://s134265.github.io/
