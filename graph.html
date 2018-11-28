@@ -2,6 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
+
+	<script type="text/javascript">             
+	var imageList = ["Figures/actorGraph.svg", "Figures/actorGraph_1950-1970.svg"];
+
+
+	function switchImage() {
+		var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+		document.myImage.src = imageList[selectedImage];
+	}
+	
+	</script>
+	
+	
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
     <!-- Enable responsiveness on mobile devices-->
@@ -47,7 +60,15 @@
             </div>
             <div class="post">
                 <p>
-                    .. Introduction
+					<div class="tiles">
+					<img class="tile" data-scale="1.6" src="Figures/actorGraph.svg" width="700" height="700" name="myImage"> 
+
+					<form method="" action="" name="myForm">
+						<select size="1" name="switch" onchange="switchImage();">
+							<option value=0>Select a Drink</option>
+							<option value=1>Caffe</option>
+						</select>
+					</form>
                 </p>
             </div>
         </div>
