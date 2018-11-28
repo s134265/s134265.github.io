@@ -28,7 +28,7 @@
                     <small>02805 Social Graphs and Interactions</small>
                 </h3>
                 <a href="https://s134265.github.io/"> Main </a> |
-                <a href="introduction.html"> Introduction </a> |
+                <a href="introduction.html"> Data Stats </a> |
                 <a href="graph.html"> Graph </a> |
                 <a href="community.html"> Communities </a> |
                 <a href="sentiment.html"> Sentiment</a> |
@@ -41,42 +41,160 @@
             <div class="post">
                 <p>
                     <h1 id="part1" class="post-title">
-                        Most enjoyable set of actors across movies
+                        Data Stats
                     </h1>
                 </p>
             </div>
             <div class="post">
                 <p>
-                    .. Introduction
+                    IMDB provides a subset of their data to everyone who might be interesting in analyzing it. The data provided by IMDB are split into multiple files which can be found here:
+					<a href="https://datasets.imdbws.com/">IMDB Data Set</a>
                 </p>
+				
+				<p>
+					Only some of the files provided by IMDB were used during this project:
+					<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;}
+					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+					.tg .tg-s268{text-align:left}
+					.tg .tg-0lax{text-align:left;vertical-align:top}
+					</style>
+					<table class="tg">
+						<tr>
+							<th class="tg-s268">Data set:</th>
+							<th class="tg-s268">Usage:</th>
+						</tr>
+						<tr>
+							<td class="tg-s268">title.principals.tsv.gz<br></td>
+							<td class="tg-xldj">This file contains the links between the actors and the movies. The file is therefore<br>required in order to establish which actors were in which movies and by doing<br>this, creating the network of actors.<br>This file is the main datafile used for the project.</td>
+						</tr>
+						<tr>
+							<td class="tg-s268">name.basics.tsv.gz<br></td>
+							<td class="tg-s268">This file is used in order to get the actors names, based on their ID (nconst In file).<br></td>
+						</tr>
+						<tr>
+							<td class="tg-0lax">title.akas.tsv.gz<br></td>
+							<td class="tg-0lax">This file is used in order to get the movie names based on their titleId.<br></td>
+						</tr>
+						<tr>
+							<td class="tg-0lax">title.basics.tsv.gz</td>
+							<td class="tg-0lax">The title.basics file is used in order to remove all entries in our dataset which <br>is not movies, such as games, tv shows, etc.</td>
+						</tr>
+						<tr>
+							<td class="tg-0lax">title.ratings.tsv.gz</td>
+							<td class="tg-0lax">This file contains the ratings of the movies and were used in order to get <br>the ratings of each movie used in the datasets.</td>
+						</tr>
+					</table>
+				</p>
+				
+				
+				<p>
+					Initially the title.principals.tsv.gz file is around 1.3 Gb with 30.674.812 rows and 6 columns. Each row is a link between a person and a production, with the person role in the production.
+				</p>
+				
+				<p>
+					The first 5 rows in the raw data file:
+					<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;}
+					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+					.tg .tg-s268{text-align:left}
+					.tg .tg-0lax{text-align:left;vertical-align:top}
+					</style>
+					<table class="tg">
+					  <tr>
+						<th class="tg-s268"></th>
+						<th class="tg-s268">tconst</th>
+						<th class="tg-0lax">ordering</th>
+						<th class="tg-0lax">nconst</th>
+						<th class="tg-0lax">category</th>
+						<th class="tg-0lax">job</th>
+						<th class="tg-0lax">characters</th>
+					  </tr>
+					  <tr>
+						<td class="tg-s268">1</td>
+						<td class="tg-s268">tt0000001</td>
+						<td class="tg-0lax">1</td>
+						<td class="tg-0lax">nm1588970</td>
+						<td class="tg-0lax">self</td>
+						<td class="tg-0lax">\N</td>
+						<td class="tg-0lax">["Herself"]</td>
+					  </tr>
+					  <tr>
+						<td class="tg-s268">2</td>
+						<td class="tg-s268">tt0000001</td>
+						<td class="tg-0lax">2</td>
+						<td class="tg-0lax">nm0005690</td>
+						<td class="tg-0lax">director</td>
+						<td class="tg-0lax">\N</td>
+						<td class="tg-0lax">\N</td>
+					  </tr>
+					  <tr>
+						<td class="tg-s268">3</td>
+						<td class="tg-s268">tt0000001</td>
+						<td class="tg-0lax">3</td>
+						<td class="tg-0lax">nm0374658</td>
+						<td class="tg-0lax">cinematographer</td>
+						<td class="tg-0lax">director of photography</td>
+						<td class="tg-0lax">\N</td>
+					  </tr>
+					  <tr>
+						<td class="tg-s268">4</td>
+						<td class="tg-s268">tt0000002</td>
+						<td class="tg-0lax">1</td>
+						<td class="tg-0lax">nm0721526</td>
+						<td class="tg-0lax">director</td>
+						<td class="tg-0lax">\N</td>
+						<td class="tg-0lax">\N</td>
+					  </tr>
+					  <tr>
+						<td class="tg-s268">5</td>
+						<td class="tg-s268">tt0000002</td>
+						<td class="tg-0lax">2</td>
+						<td class="tg-0lax">nm1335271</td>
+						<td class="tg-0lax">composer</td>
+						<td class="tg-0lax">\N</td>
+						<td class="tg-0lax">\N</td>
+					  </tr>
+					</table>
+					Where tconst is the movie ID and nconst is the actor ID.
+				</p>
+				
+				<p>
+					For this project it is only relevant to look at actors in movies, therefore multiple steps were conducted, in order to remove all data which didn't contain an actor or a movie.
+					In the title.principals.tsv.gz file the column "category" tells something about the specific persons role in that production. Every row which did not contain an actor, actress or self were removed.
+				</p>
+				
+				<p>
+					In order to remove production which were not movies, the title.basics file were used. The second column is called titleType, which describe what kind of production the movie, with the given movie ID is.
+					These types are things such as documentary, short, videoGame, movie, tvMovie etc. 
+					<br>
+					Everything which does not have either movie or tvMovie as their titleType in the title.basics file, were removed from the data, reducing it further.
+				</p>
+				
+				<p>
+					The data set of reviews used for this project is one found on the website Kaggle.com The data contains 100.000 reviews on 14.127 movies.
+					<br>
+					The data can be found here: <a href="https://www.kaggle.com/utathya/imdb-review-dataset">Review data set</a>
+					<br>
+					The reviews from kaggle is within two folders, one called test and one called train. Sentiment analysis has already been conducted on most of the rewies and sorted into folders, however for this project, the already performed sentiment analysis were ignored, and sentiment analysis were performed on all 100.000 reviews.
+					Each review in the downloaded data has its own file. Besides these review files the data also contained files, containing URLs for each review. These URLs were used in order to link each review, with the corresponding movie.
+				</p>
+				
+				<p>
+					Since this project is about predicting good movies based on their reviews, any movies in our dataset which does not have at least one review were removed. 
+					<br>
+					In order to finish cleaning up the data, all links between actors and movies were either the actor or movie were not in the dataset were removed. 
+				</p>
+				
+				<p>
+					The final dataset consists om 44.000 rows and has a size of 2.1 Mb.
+				</p>
+				
             </div>
         </div>
-        <div class="container content">
-            <h3>
-                Graph analysis
-            </h3>
-            
-            .. graph stuff
-            
 
-        </div>
-
-
-        <div class="container content">
-            <h3>
-                Sentiment analysis
-            </h3>
-            
-            .. sentiment stuff
-
-        </div>
-        <div class="container content">
-            <h3>
-                Community analysis
-            </h3>
-            .. community stuff
-
-        </div>
         <div class="container content">
             <div class="related">
                 <h3 id="bibliography">Bibliography</h3>
