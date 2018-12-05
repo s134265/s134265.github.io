@@ -58,7 +58,19 @@
             </h3>
             
             To study the sentiment of reviews in, a naive algorithm is used as described in Dodds 2012[1].
-            
+			<center>
+			<img src="Figures/sentimentAlgorithm.PNG" width="315" height="83" name="SentimentAlgo">
+            </center>
+			
+			By using this algorithm on all the reviews, it is possible to calculate the sentiment scores of all reviews.
+			<br>
+			Once the sentiment score were calculated for all reviews, it was possible to plot the sentiment distribution.
+			<img src="Figures/sentimentHistogram.svg" width="800" height="400" name="SentimentHist">
+			Based on the sentiment distribution it can be seen that the sentiment scores for these reviews are normally distributed. This means that the set of reviews used for this project has probably been selected, such that there are an equal amount of possitive and negative reviews.
+			If the reviews were instead randomly selected from IMDB, there would be a possibility that the reviews would not be normally distributed, or at least not as perfekt as these. 
+			<br> 
+			This is important consider when analysing the results of the sentiment analysis.
+
 
         </div>
 		
@@ -66,19 +78,45 @@
             <h3>
                 Frequent Words in Positive and Negative Reviews
             </h3>
+            Once the sentiment scores of all reviews are calculated, it is interesting to look at which words are often used in the possitive and the negative reviews.
+			<br>
+			In order to look at words which are unique for possitive reviews and words unique for negative reviews it is relevant to calculate the TF-IDF of each word in the two types of reviews.
+			<br>
+			TF is the term frequency of a word. This says something about how often a certain word appears in a text. An example of this is if 8% of a text is the word "happy" then the calculated TF value for the word happy is 0.08.
+			<br>
+			IDF is the inverse document frequency, which is used in order weight words, based on how many documents they appear in. The IDF score is calculated by dividing the total amount of documents, by the amount of documents the word appears in. By doing this the IDF score is higher, for words only appearing in few documents.
+			<br>
+			TF-IDF is then the score calculated for each word, by multiplying the TF with the IDF. By doing this the words who only appear in one category of reviews is suddently weighted double, compared to words appearing in both categories. This allows for extracting words from possitive and negative reviews separately.
+			<br>
+			Once the TF-IDF is calculated for all words in both possitive and negative reviews, it is possible to plot the word clouds of these.
+			<br>
+			Word cloud for possitive reviews:
+			<img src="Figures/PositiveCloud.svg" width="800" height="400" name="positiveCloud">
             
-            
+			Based on the word cloud for the possitive reviews it can be seen that alot of the words can be linked with Disney movies. This is because Disney movies themselves often contain alot of possitive aspects such as a charming prince, a beautiful kingdom etc. 
+			This shows that there is some bias when doing a sentiment analysis on movie reviews, since describing a movie plot or aspects of the movie, might result in a negative review being categorized as a positive review and vice versa.
+			<br>
+			<br>
+			Word cloud for negative reviews:
+			<img src="Figures/NegativeCloud.svg" width="800" height="400" name="negativeCloud">
+			In the same way as with the positive reviews it can be seen that movies and movie genres which tend to have a more negative atmosphere tend to be categorized as negative reviews, even though they might actually be good horror movies. This again shows that there is some bias when looking at the sentiment scores of movie reviews.
 
         </div>
-        <div class="container content">
+
+		 
+		
+		<div class="container content">
             <h3>
-                Correlation with the IMDb Rating
+                Correlation with the IMDB Rating
             </h3>
-            .. community stuff
-
-        </div>
-
-
+			It is interesting to compare the sentiment scores with the actual movie review scores on IMDB, in order to see if there is a correlation between the positive and negative words which are used in the reviews and the actual score they give the movies.
+			<br>
+			Plots over Sentiment and IMDB rating:
+			<img src="Figures/CorrelationSentiment.svg" width="800" height="400" name="negativeCloud">
+			<img src="Figures/CorrelationSentimentLog.svg" width="800" height="400" name="negativeCloud">
+			There are no clear dependency between IMDB ratings and sentiment scores.
+		
+		</div>
          <div class="container content">
             <div class="related">
                 <h3 id="bibliography">Bibliography</h3>
