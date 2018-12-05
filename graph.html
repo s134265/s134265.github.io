@@ -60,6 +60,34 @@
             </div>
             <div class="post">
                 <p>
+					In order to analyse the cleaned data, a weighted graph over the network of actors were created. This was done by creating a list of all the actors in the data set and linking them through their movies.
+					By doing this each actors is a node in the network and each edge then corresponds to the actors being in a movie together, the weight of the edges corresponds to the amount of movies the actors has been in together..
+					Each Node has two attributes, describing their name and gender. 
+					<br>
+					Once all actors and links were added to the network, it ended up with a size of 16.759 nodes and 55.000 links.
+					<img class="zoom" data-scale="1.6" src="Figures/actorGraph.svg" width="700" height="700" name="actorGraph"> 
+					
+					As seen on the graph above, the network of all the actors are quite large with a lot of nodes and edges. 
+					<br>
+					a relevant way to split up the network into smaller networks were to look at the dates, for which the movies were released.
+					The reason why it is relevant to look at the movies release year is that different people have different prefferences, not only in genres, but also in what time era the movies is from. Some like older movies and others like modern movies.
+					
+					<h3>
+						Categorizing movies
+					</h3>
+					Before splitting the graphs into time periods, it is relevant to look at when these time periods should be. In order to do this a histogram was created, which showed how many movies were made each year.
+					This graph would make it possible to see which time periods each graph should contain, such that they don't contain too many or few nodes. 
+					<br>
+					The histogram:
+					<img src="Figures/moviesDist.svg" width="800" height="800" alt="Histogram over movies">
+					
+					Based on the histogram, it can be seen that in the time period between 1960 and 1970, almost no movies were made. 
+					When looking at film history, there was a ....
+					<br>
+					Besides this it can also be seen that the movie market startet growing around the 1970s and that up until this day the movie market is continuing to grow. 
+					Because of this growth after the 70s, it was decided to have the first time period as any movies before the 70s and then having the rest of the time periods in intervals of 10 years.
+					
+					
 					<img class="zoom" data-scale="1.6" src="Figures/actorGraph.svg" width="700" height="700" name="myImage"> 
 
 					<form method="" action="" name="myForm">
