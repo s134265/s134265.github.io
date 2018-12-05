@@ -33,7 +33,7 @@
 				<a href="sentiment.html"> Sentiment</a> |
                 <a href="community.html"> Communities </a> |
                 <a href="actors.html"> Conclusion</a> |
-                <a href="http://nbviewer.jupyter.org/github/s134265/socialgraphs2018/blob/master/Project/Explainer%20Notebook.ipynb"> Notebook</a>
+                <a href="notebook.html"> Notebook</a>
             </div>
         </div>
 
@@ -81,14 +81,6 @@
             Once the sentiment scores of all reviews are calculated, it is interesting to look at which words are often used in the possitive and the negative reviews.
 			<br>
 			In order to look at words which are unique for possitive reviews and words unique for negative reviews it is relevant to calculate the TF-IDF of each word in the two types of reviews.
-			<br>
-			TF is the term frequency of a word. This says something about how often a certain word appears in a text. An example of this is if 8% of a text is the word "happy" then the calculated TF value for the word happy is 0.08.
-			<br>
-			IDF is the inverse document frequency, which is used in order weight words, based on how many documents they appear in. The IDF score is calculated by dividing the total amount of documents, by the amount of documents the word appears in. By doing this the IDF score is higher, for words only appearing in few documents.
-			<br>
-			TF-IDF is then the score calculated for each word, by multiplying the TF with the IDF. By doing this the words who only appear in one category of reviews is suddently weighted double, compared to words appearing in both categories. This allows for extracting words from possitive and negative reviews separately.
-			<br>
-			Once the TF-IDF is calculated for all words in both possitive and negative reviews, it is possible to plot the word clouds of these.
 			<br>
 			Word cloud for possitive reviews:
 			<img src="Figures/PositiveCloud.svg" width="800" height="400" name="positiveCloud">
