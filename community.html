@@ -2,6 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
+
+	<script type="text/javascript">             
+	var imageList = ["Figures/c1.PNG", "Figures/c5.PNG", "Figures/c7.PNG", "Figures/c8.PNG", "Figures/c21.PNG", "Figures/c25.PNG"];
+
+	function switchImage() {
+		var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+		document.myImage.src = imageList[selectedImage];
+	}
+	
+	</script>
+	
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
     <!-- Enable responsiveness on mobile devices-->
@@ -41,57 +52,75 @@
             <div class="post">
                 <p>
                     <h1 id="part1" class="post-title">
-                        Most enjoyable set of actors across movies
+                        Communities
                     </h1>
                 </p>
             </div>
             <div class="post">
                 <p>
-                    .. Introduction
+                    The communities between actors were detected in the graph of all actors described under the <a href="graph.html"> Graph </a> page which resulted in the following zoomable graph: 
+					<img class="zoom" data-scale="1.6" src="Figures/communities_full.svg" width="800" height="800" name="full_Community_graph"> 
+					As seen on the graph there are a lot of large communities. 
+					<br>
+					In order to analyse these communities a community analisys were conducted in order to see what these communities consists of.
+					<br>
+					in the graph it can be seen that there are 6 closely grouped communities, these are analysed in order to find out why they are grouped as they are:
+					<center>
+					<form method="" action="" name="myForm">
+						<select size="1" name="switch" onchange="switchImage();">
+							<option value=0>Community 1 - grey circle - Old movies</option>
+							<option value=1>Community 5 - Dark red cirlce - French movies</option>
+							<option value=2>Community 7 - Lime green circle - Asian kung fu </option>
+							<option value=3>Community 8 - turquoise circle - Indian movies</option>
+							<option value=4>Community 21 - Indigo circle - New movies</option>
+							<option value=5>Community 25 - Dark green - Japanese</option>
+						</select>
+					</form>
+					<img src="Figures/c1.PNG" width="800" height="115" name="myImage">
+					</center>
+					
+					
+					Community detection were also carried out on all of the time periods descriped in the <a href="graph.html"> Graph </a> page:
+
+					
+						<script type="text/javascript">             
+						var imageList2 = ["Figures/communities_1900-1970.svg", "Figures/communities_1970-1980.svg", "Figures/communities_1980-1990.svg", "Figures/communities_1990-2000.svg", "Figures/communities_2000.svg"]
+
+						function switchImage2() {
+							var selectedImage = document.myForm2.switch2.options[document.myForm2.switch2.selectedIndex].value;
+							document.periodCommunity.src = imageList2[selectedImage];
+						}						
+						</script>
+					
+					<img class="zoom" data-scale="1.6" src="Figures/communities_1900-1970.svg" width="800" height="800" name="periodCommunity"> 
+					<center>
+					<form method="" action="" name="myForm2">
+						<select size="1" name="switch2" onchange="switchImage2();">
+							<option value=0>1900-1970</option> 	
+							<option value=1>1970-1980</option>
+							<option value=2>1980-1990</option>
+							<option value=3>1990-2000</option>
+							<option value=4>2000-2018</option>
+						</select>
+					</form>
+					</center>
+					In the graphs above it can be seen that the communities are not as grouped when splitting them into the time periods. The data is therefore not as interresting to look at, however it is available here:
+					<a href ="Figures/communityAnalysis.txt">Community data in periods</a>
+					<br>
+					In the above text file it can also be seen that the average sentiment score for each community is almost the same, therefore it is not possible to find enjoyable actor groups based on these communities.
+
+					
+					
+					
+					<script src="wheelzoom.js"></script>
+                    <script>
+                        wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
+                    </script>
                 </p>
             </div>
         </div>
-        <div class="container content">
-            <h3>
-                Graph analysis
-            </h3>
-            
-            .. graph stuff
-            
 
-        </div>
-
-
-        <div class="container content">
-            <h3>
-                Sentiment analysis
-            </h3>
-            
-            .. sentiment stuff
-
-        </div>
-        <div class="container content">
-            <h3>
-                Community analysis
-            </h3>
-            .. community stuff
-
-        </div>
 		
-        <div class="container content">
-            <div class="related">
-                <h3 id="bibliography">Bibliography</h3>
-                <ul style="list-style-type:none">
-                    <li>
-                        <span>
-                            <a href="https://opendata.cityofnewyork.us">NYC Open Data Hub</a>
-                        </span>
-                        <span>
-                            Accessed 20-03-2018
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 </body>
