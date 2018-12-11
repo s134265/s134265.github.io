@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
-    
+
 <body>
     <div class="wrap">
         <div class="masthead">
@@ -27,13 +27,14 @@
                     <a href="/" title="Home">Final project</a>
                     <small>02805 Social Graphs and Interactions</small>
                 </h3>
-                <a href="https://s134265.github.io/"> Main </a> |
-                <a href="introduction.html"> Data Stats </a> |
-                <a href="graph.html"> Graph </a> |
-				<a href="sentiment.html"> Sentiment</a> |
-                <a href="community.html"> Communities </a> |
-                <a href="actors.html"> Conclusion</a> |
-                <a href="notebook.html"> Notebook</a>
+                <a href="https://s134265.github.io/", style="font-size: 16px" > Main </a> |
+                <a href="introduction.html", style="font-size: 16px"> Data Stats </a> |
+                <a href="graph.html", style="font-size: 16px"> Graph </a> |
+                <a href="sentiment.html", style="font-size: 16px"> Sentiment</a> |
+                <a href="community.html", style="font-size: 16px"> Communities </a> |
+                <a href="ratingsSentiment.html", style="font-size: 16px"> Ratings & Sentiments Graphs </a> |
+                <a href="actors.html", style="font-size: 16px"> Conclusion</a> |
+                <a href="notebook.html", style="font-size: 16px"> Notebooks</a>
             </div>
         </div>
 
@@ -50,7 +51,7 @@
                     IMDB provides a subset of their data to everyone who might be interesting in analyzing it. The data provided by IMDB are split into multiple files which can be found here:
 					<a href="https://datasets.imdbws.com/">IMDB Data Set</a>
                 </p>
-				
+
 				<p>
 					Only some of the files provided by IMDB were used during this project:
 					<style type="text/css">
@@ -87,12 +88,12 @@
 						</tr>
 					</table>
 				</p>
-				
-				
+
+
 				<p>
 					Initially the title.principals.tsv.gz file is around 1.3 Gb with 30.674.812 rows and 6 columns. Each row is a link between a person and a production, with the person role in the production.
 				</p>
-				
+
 				<p>
 					The first 5 rows in the raw data file:
 					<style type="text/css">
@@ -160,19 +161,19 @@
 					</table>
 					Where tconst is the movie ID and nconst is the actor ID.
 				</p>
-				
+
 				<p>
 					For this project it is only relevant to look at actors in movies, therefore multiple steps were conducted, in order to remove all data which didn't contain an actor or a movie.
 					In the title.principals.tsv.gz file the column "category" tells something about the specific persons role in that production. Every row which did not contain an actor, actress or self were removed.
 				</p>
-				
+
 				<p>
 					In order to remove productions which were not movies, the title.basics file were used. The second column is called titleType, which describe what kind of production the movie, with the given movie ID is.
-					These types are things such as documentary, short, videoGame, movie, tvMovie etc. 
+					These types are things such as documentary, short, videoGame, movie, tvMovie etc.
 					<br>
 					Everything which does not have either movie or tvMovie as their titleType in the title.basics file, were removed from the data, reducing it further.
 				</p>
-				
+
 				<p>
 					<h3>
 						User reviews
@@ -184,17 +185,17 @@
 					The reviews from kaggle is within two folders, one called test and one called train. Sentiment analysis has already been conducted on most of the rewies and sorted into folders, however for this project, the already performed sentiment analysis were ignored, and sentiment analysis were performed on all 100.000 reviews.
 					Each review in the downloaded data has its own file. Besides these review files the data also contained files, containing URLs for each review. These URLs were used in order to link each review, with the corresponding movie.
 				</p>
-				
+
 				<p>
-					Since this project is about predicting good movies based on their reviews, any movies in our dataset which does not have at least one review were removed. 
+					Since this project is about predicting good movies based on their reviews, any movies in our dataset which does not have at least one review were removed.
 					<br>
-					In order to finish cleaning up the data, all links between actors and movies were either the actor or movie were not in the dataset were removed. 
+					In order to finish cleaning up the data, all links between actors and movies were either the actor or movie were not in the dataset were removed.
 				</p>
-				
+
 				<p>
 					The final dataset consists om 44.000 rows and has a size of 2.1 Mb.
 				</p>
-				
+
             </div>
         </div>
 

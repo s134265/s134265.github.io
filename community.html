@@ -3,16 +3,16 @@
 
 <head>
 
-	<script type="text/javascript">             
+	<script type="text/javascript">
 	var imageList = ["Figures/c1.PNG", "Figures/c5.PNG", "Figures/c6.PNG", "Figures/c7.PNG", "Figures/c21.PNG", "Figures/c24.PNG"];
 
 	function switchImage() {
 		var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
 		document.myImage.src = imageList[selectedImage];
 	}
-	
+
 	</script>
-	
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
     <!-- Enable responsiveness on mobile devices-->
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
-    
+
 <body>
     <div class="wrap">
         <div class="masthead">
@@ -38,13 +38,14 @@
                     <a href="/" title="Home">Final project</a>
                     <small>02805 Social Graphs and Interactions</small>
                 </h3>
-                <a href="https://s134265.github.io/"> Main </a> |
-                <a href="introduction.html"> Data Stats </a> |
-                <a href="graph.html"> Graph </a> |
-				<a href="sentiment.html"> Sentiment</a> |
-                <a href="community.html"> Communities </a> |
-                <a href="actors.html"> Conclusion</a> |
-                <a href="notebook.html"> Notebook</a>
+								<a href="https://s134265.github.io/", style="font-size: 16px" > Main </a> |
+			          <a href="introduction.html", style="font-size: 16px"> Data Stats </a> |
+			          <a href="graph.html", style="font-size: 16px"> Graph </a> |
+			          <a href="sentiment.html", style="font-size: 16px"> Sentiment</a> |
+			          <a href="community.html", style="font-size: 16px"> Communities </a> |
+			          <a href="ratingsSentiment.html", style="font-size: 16px"> Ratings & Sentiments Graphs </a> |
+			          <a href="actors.html", style="font-size: 16px"> Conclusion</a> |
+			          <a href="notebook.html", style="font-size: 16px"> Notebooks</a>
             </div>
         </div>
 
@@ -58,9 +59,9 @@
             </div>
             <div class="post">
                 <p>
-                    The communities between actors were detected in the graph of all actors described under the <a href="graph.html"> Graph </a> page which resulted in the following zoomable graph: 
-					<img class="zoom" data-scale="1.6" src="Figures/communities_full.svg" width="800" height="800" name="full_Community_graph"> 
-					As seen on the graph there are a lot of large communities. 
+                    The communities between actors were detected in the graph of all actors described under the <a href="graph.html"> Graph </a> page which resulted in the following zoomable graph:
+					<img class="zoom" data-scale="1.6" src="Figures/communities_full.svg" width="800" height="800" name="full_Community_graph">
+					As seen on the graph there are a lot of large communities.
 					<br>
 					In order to analyse these communities a community analisys were conducted in order to see what these communities consists of.
 					<br>
@@ -79,24 +80,24 @@
 					<img src="Figures/c1.PNG" width="800" height="115" name="myImage">
 					</center>
 					There are also alot of communities which lies betweeen the new and old movies, these are communities with actors who has been in both old and newer movies.
-					
+
 					Community detection were also carried out on all of the time periods descriped in the <a href="graph.html"> Graph </a> page:
 
-					
-						<script type="text/javascript">             
+
+						<script type="text/javascript">
 						var imageList2 = ["Figures/communities_1900-1970.svg", "Figures/communities_1970-1980.svg", "Figures/communities_1980-1990.svg", "Figures/communities_1990-2000.svg", "Figures/communities_2000.svg"]
 
 						function switchImage2() {
 							var selectedImage = document.myForm2.switch2.options[document.myForm2.switch2.selectedIndex].value;
 							document.periodCommunity.src = imageList2[selectedImage];
-						}						
+						}
 						</script>
-					
-					<img class="zoom" data-scale="1.6" src="Figures/communities_1900-1970.svg" width="800" height="800" name="periodCommunity"> 
+
+					<img class="zoom" data-scale="1.6" src="Figures/communities_1900-1970.svg" width="800" height="800" name="periodCommunity">
 					<center>
 					<form method="" action="" name="myForm2">
 						<select size="1" name="switch2" onchange="switchImage2();">
-							<option value=0>1900-1970</option> 	
+							<option value=0>1900-1970</option>
 							<option value=1>1970-1980</option>
 							<option value=2>1980-1990</option>
 							<option value=3>1990-2000</option>
@@ -109,9 +110,9 @@
 					<br>
 					In the above text file it can also be seen that the average sentiment score for each community is almost the same, therefore it is not possible to find enjoyable actor groups based on these communities.
 
-					
-					
-					
+
+
+
 					<script src="wheelzoom.js"></script>
                     <script>
                         wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
@@ -120,7 +121,7 @@
             </div>
         </div>
 
-		
+
 
     </div>
 </body>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <script type="text/javascript">
+  var imageList = ["Figures/actorsAverageRatings_1900-1970.svg", "Figures/actorsAverageRatings_1970-1980.svg", "Figures/actorsAverageRatings_1980-1990.svg", "Figures/actorsAverageRatings_1990-2000.svg", "Figures/actorsAverageRatings_2000+.svg"];
+
+  function switchImage() {
+    var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+    document.myImage.src = imageList[selectedImage];
+  }
+
+  </script>
+
+  <script type="text/javascript">
+  var imageList2 = ["Figures/actorGraph_Ratings_1900-1970.svg", "Figures/actorGraph_Ratings_1970-1980.svg", "Figures/actorGraph_Ratings_1980-1990.svg", "Figures/actorGraph_Ratings_1990-2000.svg", "Figures/actorGraph_Ratings_2000+.svg"];
+
+  function switchImage2() {
+    var selectedImage2 = document.myForm2.switch.options[document.myForm2.switch.selectedIndex].value;
+    document.myImage2.src = imageList2[selectedImage2];
+  }
+
+  </script>
+
+  <script type="text/javascript">
+  var imageList3 = ["Figures/actorsAverageSentiments_1900-1970.svg", "Figures/actorsAverageSentiments_1970-1980.svg", "Figures/actorsAverageSentiments_1980-1990.svg", "Figures/actorsAverageSentiments_1990-2000.svg", "Figures/actorsAverageSentiments_2000+.svg"];
+
+  function switchImage3() {
+    var selectedImage3 = document.myForm3.switch.options[document.myForm3.switch.selectedIndex].value;
+    document.myImage3.src = imageList3[selectedImage3];
+  }
+
+  </script>
+  <script type="text/javascript">
+  var imageList4 = ["Figures/actorGraph_Sentiments_1900-1970.svg", "Figures/actorGraph_Sentiments_1970-1980.svg", "Figures/actorGraph_Sentiments_1980-1990.svg", "Figures/actorGraph_Sentiments_1990-2000.svg", "Figures/actorGraph_Sentiments_2000+.svg"];
+
+  function switchImage4() {
+    var selectedImage4 = document.myForm4.switch.options[document.myForm4.switch.selectedIndex].value;
+    document.myImage4.src = imageList4[selectedImage4];
+  }
+
+  </script>
+
+  <title>
+    Graphs and Interactions &middot; Final project
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <!-- <label for="sidebar-checkbox" class="sidebar-toggle"></label> -->
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Final project</a>
+            <small>02805 Social Graphs and Interactions</small>
+          </h3>
+          <a href="https://s134265.github.io/", style="font-size: 16px" > Main </a> |
+          <a href="introduction.html", style="font-size: 16px"> Data Stats </a> |
+          <a href="graph.html", style="font-size: 16px"> Graph </a> |
+          <a href="sentiment.html", style="font-size: 16px"> Sentiment</a> |
+          <a href="community.html", style="font-size: 16px"> Communities </a> |
+          <a href="ratingsSentiment.html", style="font-size: 16px"> Ratings & Sentiments Graphs </a> |
+          <a href="actors.html", style="font-size: 16px"> Conclusion</a> |
+          <a href="notebook.html", style="font-size: 16px"> Notebooks</a>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+          <p>
+            <h1 id="part1" class="post-title">
+              Ratings & Sentiments Graphs
+            </h1>
+          </p>
+        </div>
+        <div class="post">
+          <p>
+            For now the weights of the edges correspond to the number of collaborations between two actors.
+            <br>
+            Now we gonna replace those weight by the average ratings of the movies the two actors has made together and after by the average sentiment score.
+
+            <h2>
+  						Rating-Based Graphs:
+  					</h2>
+            To get a first overview on how the the ratings are distributed amongst the actors, it could be interessting to draw an histogram of the ratings.
+            <br>
+            <br>
+            <img src="Figures/actorsAverageRatings.svg" width="800" alt="averageRatingHist">
+            <br>
+            Actresses and actors seem to have the same ratings distributions, with very similar average.
+            Nonetheless actresses seems more present on the border of the rating range with a bigger proportion of women with very high or very low rating score.
+            <br>
+            To visualize the importance of the ratings on the graph, it is relevant to draw the graph of the actors with nodes computed as a function of their average rating.
+            Some actors might have played in very few movies that all had a good rating, but it won't be relevant if they appear very big on the graph as their career in the cinema was really short.
+            To tackle this issue, we set the size of actors that played in less than 10 movies to the minimum, so that those actors can't take too much importance.
+            <br>
+            Here is the graph we get:
+            <br>
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorGraph_Ratings_full.svg" width="800" height="800" alt="RatingBasedGraph">
+            <br>
+            In the same way we have done for the previous graphs, we can do the same analysis by period. Here we consider actors who have done at least 7 movies by period.
+            <br>
+            Here is the rating histograms we found:
+            <br>
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorsAverageRatings_1900-1970.svg" width="800"  name="myImage">
+  					<center>
+  					<form method="" action="" name="myForm">
+  						<select size="1" name="switch" onchange="switchImage();">
+  							<option value=0>1900-1970</option>
+  							<option value=1>1970-1980</option>
+  							<option value=2>1980-1990</option>
+  							<option value=3>1990-2000</option>
+  							<option value=4>2000-2018</option>
+  						</select>
+  					</form>
+                      <script src="wheelzoom.js"></script>
+                      <script>
+                          wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
+                      </script>
+  					</center>
+            <br>
+            <br>
+            Distributions tend to be similar in shape, but old actors have better ratings than new ones in average.
+            <br>
+            And here are the corresponding graphs:
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorGraph_Ratings_1900-1970.svg" width="800"  name="myImage2">
+  					<center>
+  					<form method="" action="" name="myForm2">
+  						<select size="1" name="switch" onchange="switchImage2();">
+  							<option value=0>1900-1970</option>
+  							<option value=1>1970-1980</option>
+  							<option value=2>1980-1990</option>
+  							<option value=3>1990-2000</option>
+  							<option value=4>2000-2018</option>
+  						</select>
+  					</form>
+                      <script src="wheelzoom.js"></script>
+                      <script>
+                          wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
+                      </script>
+  					</center>
+            <br>
+            We can see in the 1900-1970 graph in the bottom a group of actors with the same really high rating.
+            It is because, those actors did the same movies in the 1950s which makes them really close in the graph and really big.
+            <br>
+            We can see that close nodes tends to have the same size (nodes below the number of movies limit excluded). This is normal as those nodes corresponds to actors playing together in movies.
+            There is no major difference between actresses and actors excepted in the 1980s where 9 of the 10 biggest average ratings corresponds to men.
+            <br>
+            Nodes on the outside of the graph corresponds to less mainstream actors. So more of them haven't done a lot of movies and their nodes have the minimum size.
+            But amongst those who have done a sufficient number of movies, we can see a lot of large nodes corresponding to good average ratings.
+            This could be explain by the fact that mainstream movies tends to have average ratings and then mainstream actors too, which  is not the case for smaller movies, making it easier for non mainstream actors to get good ratings.
+            <br>
+            It can also be interesting to use the rating-based graph to run the community analysis.
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/communitiesfull_Ratings.svg" width="800" height="800" alt="RatingBasedCommunityGraph">
+            The results we get are pretty similar to the one with the weight based on the number of collaborations. But we can now distinguish the community 14 (grey triangle - upper left) which corresponds to spanish-speaking actors.
+            <br>
+            The full community analysis report for the rating-based graph is available <a href ="Figures/Full_communityAnalysis_Ratings.txt">here</a>.
+
+            <h2>
+  						Sentiment-Based Graphs:
+  					</h2>
+            The same way as for the rating-based graph, to get a first overview on how the the sentiment score are distributed amongst the actors, it could be interessting to draw an histogram.
+            <br>
+            <br>
+            <img src="Figures/actorsAverageSentiments.svg" width="800" alt="averageSentimeentHist">
+            <br>
+            Here again, actresses and actors seem to have the same sentiment score distributions, with very similar average.
+            Even more the sentiment scores are really concentrated and hard to interpret.
+            <br>
+            Exactly as we have done before for ratings,it is relevant to draw the graph of the actors with nodes computed as a function of their average sentiment score.
+            Not to give too much importance to actors, who played in very few movies, we set the size of actors that played in less than 10 movies to the minimum.
+            <br>
+            Here is the graph we get:
+            <br>
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorGraph_Sentiments_full.svg" width="800" height="800" alt="RatingBasedGraph">
+            <br>
+            In the same way we have done for the previous graph we can do the same analysis by period. Here we consider actors who have done at least 7 movies by period.
+            <br>
+            Here is the sentiment score histograms we found:
+            <br>
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorsAverageSentiments_1900-1970.svg" width="800"  name="myImage3">
+  					<center>
+  					<form method="" action="" name="myForm3">
+  						<select size="1" name="switch" onchange="switchImage3();">
+  							<option value=0>1900-1970</option>
+  							<option value=1>1970-1980</option>
+  							<option value=2>1980-1990</option>
+  							<option value=3>1990-2000</option>
+  							<option value=4>2000-2018</option>
+  						</select>
+  					</form>
+                      <script src="wheelzoom.js"></script>
+                      <script>
+                          wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
+                      </script>
+  					</center>
+            <br>
+            <br>
+            Sentiment scores are really close and we cannot really interpret the results.
+            <br>
+            And here are the corresponding graphs:
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/actorGraph_Sentiments_1900-1970.svg" width="800"  name="myImage4">
+  					<center>
+  					<form method="" action="" name="myForm4">
+  						<select size="1" name="switch" onchange="switchImage4();">
+  							<option value=0>1900-1970</option>
+  							<option value=1>1970-1980</option>
+  							<option value=2>1980-1990</option>
+  							<option value=3>1990-2000</option>
+  							<option value=4>2000-2018</option>
+  						</select>
+  					</form>
+                      <script src="wheelzoom.js"></script>
+                      <script>
+                          wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
+                      </script>
+  					</center>
+            <br>
+            We can see in the 1900-1970 graph in the bottom, the samegroup of actors we found with the rating based graph.
+            But the graphs don't show a lot of difference between the nodes, even if the rendering function used to compute the node size is amplifying (exponentially) the sentiment score diffrence.
+            <br>
+            It can also be interesting to use the sentiment-based graph to run the community analysis.
+            <br>
+            <img class="zoom" data-scale="1.6" src="Figures/communitiesfull_Sentiments.svg" width="800" height="800" alt="RatingBasedCommunityGraph">
+            The communities we have are nearly the same as the ones found with the rating base analysis, including the spanish-speaking community.
+            That means that we get better communities in this case with all edges with very similar weights, instead of weights based ond the number of collaborations and that making one movie with another actor is already really important for the community analysis.
+            <br>
+            The full community analysis report for the sentiment-based graph is available <a href ="Figures/Full_communityAnalysis_SentimentBased.txt">here</a>.
+          </p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </body>

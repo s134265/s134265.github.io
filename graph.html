@@ -3,17 +3,17 @@
 
 <head>
 
-	<script type="text/javascript">             
+	<script type="text/javascript">
 	var imageList = ["Figures/actorGraph_1970.svg", "Figures/actorGraph_1980.svg", "Figures/actorGraph_1990.svg", "Figures/actorGraph_2000.svg", "Figures/actorGraph_now.svg"];
 
 	function switchImage() {
 		var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
 		document.myImage.src = imageList[selectedImage];
 	}
-	
+
 	</script>
-	
-	
+
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
     <!-- Enable responsiveness on mobile devices-->
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
-    
+
 <body>
     <div class="wrap">
         <div class="masthead">
@@ -39,13 +39,14 @@
                     <a href="/" title="Home">Final project</a>
                     <small>02805 Social Graphs and Interactions</small>
                 </h3>
-                <a href="https://s134265.github.io/"> Main </a> |
-                <a href="introduction.html"> Data Stats </a> |
-                <a href="graph.html"> Graph </a> |
-				<a href="sentiment.html"> Sentiment</a> |
-                <a href="community.html"> Communities </a> |
-                <a href="actors.html"> Conclusion</a> |
-                <a href="notebook.html"> Notebook</a>
+								<a href="https://s134265.github.io/", style="font-size: 16px" > Main </a> |
+			          <a href="introduction.html", style="font-size: 16px"> Data Stats </a> |
+			          <a href="graph.html", style="font-size: 16px"> Graph </a> |
+			          <a href="sentiment.html", style="font-size: 16px"> Sentiment</a> |
+			          <a href="community.html", style="font-size: 16px"> Communities </a> |
+			          <a href="ratingsSentiment.html", style="font-size: 16px"> Ratings & Sentiments Graphs </a> |
+			          <a href="actors.html", style="font-size: 16px"> Conclusion</a> |
+			          <a href="notebook.html", style="font-size: 16px"> Notebooks</a>
             </div>
         </div>
 
@@ -66,41 +67,41 @@
 					<br>
 					The total network of all actors, ended up with a size of 16.759 nodes and around 55.000 links.
 					<img src="Figures/actorGraph.svg" width="800" height="800" alt="actorGraph">
-					
-					As seen on the graph above, the network of all the actors are quite large with a lot of nodes and edges. 
+
+					As seen on the graph above, the network of all the actors are quite large with a lot of nodes and edges.
 					<br>
 					a relevant way to split up the network into smaller networks were to look at the dates, for which the movies were released.
 					The reason why it is relevant to look at the movies release year is, that people have different prefferences, not only in genres, but also in what time era the movies are from. Some like older movies and others like modern movies.
-					
+
 					<h3>
 						Categorizing movies
 					</h3>
 					Before splitting the graphs into time periods, it is relevant to decide when these time periods should be. In order to do this a histogram was created, which shows how many movies were made each year.
-					This graph makes it possible to see which time periods each graph should contain, such that they don't contain too many or too few nodes. 
+					This graph makes it possible to see which time periods each graph should contain, such that they don't contain too many or too few nodes.
 					<br>
 					The histogram:
 					<img src="Figures/moviesDist.svg" width="800" height="500" alt="Histogram over movies">
-					
-					Based on the histogram, it can be seen that in the time period between 1960 and 1970, almost no movies were made. 
-					When looking at film history, there was a decline in the studio system which began in the 40s. 
-					The reason for this was that a lot of the larger hollywood film studios were sued over a system called "block-booking" which was a system where a cinema had to buy a whole year worth of films from a company. By doing this they had to buy future movies, before they were made. 
+
+					Based on the histogram, it can be seen that in the time period between 1960 and 1970, almost no movies were made.
+					When looking at film history, there was a decline in the studio system which began in the 40s.
+					The reason for this was that a lot of the larger hollywood film studios were sued over a system called "block-booking" which was a system where a cinema had to buy a whole year worth of films from a company. By doing this they had to buy future movies, before they were made.
 					This lawsuit had a great impact on the movie industry and resulted in a consent agreement which stated that block booking and buying movies without seeing them first were removed.
 					<br>
 					As seen on the histogram, this resulted in almost no movies being made in the 60s.
 					<br>
 					in 1967 the movie "Bonnie and Clyde" were released, which is seen as the new beginning of the American movie industry. This can be seen as the year in the histogram, where movies are once again being made.[1]
-					
+
 					<br>
 					Since the movie industry were once again on the rise after the 70s, it was decided to have the first time period as any movies before the 70s and then having the rest of the time periods in intervals of 10 years.
 					<br>
 					The last time period would be 2010-2017, however since this is not a full time period of 10 years it was decided to instead make the last time period 2000-2018 since movies made after the year 2000, can be seen as modern movies.
-					
+
 					<h3>
 						Graph per interval.
 					</h3>
 					Based on the established time intervals, the different plots were created. In the figure bellow it is possible to chose the graph being displayed in the drop down menu.
 					It is possible to zoom on the graphs, by scrolling on the mouse wheel, while hovering over the graph. Once zoomed the graphs can also be dragged in order to look at different parts of the graph.
-					<img class="zoom" data-scale="1.6" src="Figures/actorGraph_1970.svg" width="800" height="800" name="myImage"> 
+					<img class="zoom" data-scale="1.6" src="Figures/actorGraph_1970.svg" width="800" height="800" name="myImage">
 					<center>
 					<form method="" action="" name="myForm">
 						<select size="1" name="switch" onchange="switchImage();">
@@ -116,20 +117,20 @@
                         wheelzoom(document.querySelector('img.zoom'), {maxZoom: 4});
                     </script>
 					</center>
-					
+
 					The node size is based on the outgoing strength. Therefore the node size says something about how many movies the given actor/ actress has been in.
 					<br>
 					For the period 1900-1970 it can be seen that some of the most active actors were John Wayne, Barbara Stanwyck and Randolph Scott.
 					When looking at these actors on IMDB it can be seen that John Wayne has been in 178 movies in the time period 1926- 1976[2], Barbara stanwyck has been in 106 movies between 1927-1986[3] and that Randolph Scott has been in 107 movies in the period 1928-1962[4].
 					It is therefore very fitting that these actors/actresses are large nodes in this network.
-					
+
 					<br>
 					Throughout all the time periods it can be seen that the node sizes fits the IMDB pages, however there are a few interresting special cases.
-					
+
 					<h3>
 						Special nodes in graphs.
 					</h3>
-					
+
 					In the time period 1970-1980 there is a quite large node "Paul Naschy" which is far away from all other big nodes in the network. When looking at his IMDB page it can be seen that he is "The true king of spanish horror cinema".[5]
 					When looking at the network it makes sense that he is a large node, since he has been in over 120 movies. The reason why he is so far away from everyone else is that he was in spanish movies, where as the other large nodes were in American movies.
 					<br>
@@ -137,23 +138,23 @@
 					<br>
 					Finally in 2000-2018 it can be seen that there are suddently a small group of big nodes, containing indian actors. When looking at the Indian film industry, it can be seen that Indian movies started to grow globally in the early 2000s.
 					This resulted in more money being put into the Indian film industry and therefore a larger production. This growth in Indian film industry is what results in this new group of big nodes, seen on the graph. [7]
-					
+
 					<h3>
 						Degree distribution
 					</h3>
 					When looking at the degree distribution for all of the networks, it can be seen that in general for all of them, the network looks like a random network for the small nodes and a scale-free network for the larger nodes.
-					
-						<script type="text/javascript">             
+
+						<script type="text/javascript">
 						var imageList2 = ["Figures/ll1970.svg", "Figures/ll1980.svg", "Figures/ll1990.svg", "Figures/ll2000.svg", "Figures/llnow.svg"]
 
 						function switchImage2() {
 							var selectedImage = document.myForm2.switch2.options[document.myForm2.switch2.selectedIndex].value;
 							document.Degree_distribution.src = imageList2[selectedImage];
-						}						
+						}
 						</script>
-					
+
 					<img src="Figures/ll1970.svg" width="800" height="500" name="Degree_distribution">
-					
+
 					<center>
 					<form method="" action="" name="myForm2">
 						<select size="1" name="switch2" onchange="switchImage2();">
@@ -165,14 +166,14 @@
 						</select>
 					</form>
 					</center>
-					
+
                 </p>
             </div>
         </div>
 
-		
-		
-		
+
+
+
         <div class="container content">
             <div class="related">
                 <h3 id="bibliography">Bibliography</h3>
@@ -233,7 +234,7 @@
                             Accessed 05/12-2018
                         </span>
                     </li>
-					
+
                 </ul>
             </div>
         </div>

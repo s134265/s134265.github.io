@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
-    
+
 <body>
     <div class="wrap">
         <div class="masthead">
@@ -27,18 +27,19 @@
                     <a href="/" title="Home">Final project</a>
                     <small>02805 Social Graphs and Interactions</small>
                 </h3>
-                <a href="https://s134265.github.io/"> Main </a> |
-                <a href="introduction.html"> Data Stats </a> |
-                <a href="graph.html"> Graph </a> |
-				<a href="sentiment.html"> Sentiment</a> |
-                <a href="community.html"> Communities </a> |
-                <a href="actors.html"> Conclusion</a> |
-                <a href="notebook.html"> Notebook</a>
+                <a href="https://s134265.github.io/", style="font-size: 16px" > Main </a> |
+                <a href="introduction.html", style="font-size: 16px"> Data Stats </a> |
+                <a href="graph.html", style="font-size: 16px"> Graph </a> |
+                <a href="sentiment.html", style="font-size: 16px"> Sentiment</a> |
+                <a href="community.html", style="font-size: 16px"> Communities </a> |
+                <a href="ratingsSentiment.html", style="font-size: 16px"> Ratings & Sentiments Graphs </a> |
+                <a href="actors.html", style="font-size: 16px"> Conclusion</a> |
+                <a href="notebook.html", style="font-size: 16px"> Notebooks</a>
             </div>
         </div>
 
         <div class="container content">
-            
+
 			<div class="post">
                 <p>
                     <h1 id="part1" class="post-title">
@@ -56,17 +57,17 @@
             <h3>
                 Sentiment Distribution of Reviews
             </h3>
-            
+
 			For this project the sentiment scores were calculated on all of the reviews. When the sentiment score is calculated for each review, it is possible to plot all of them in order to look at the sentiment distribution:
 			<img src="Figures/SentimentHistogram.svg" width="800" height="400" name="SentimentHist">
 			Based on the sentiment distribution it can be seen that the sentiment scores for these reviews are normally distributed. This means that the set of reviews used for this project has probably been selected, such that there are an equal amount of possitive and negative reviews.
-			If the reviews were instead randomly selected from IMDB, there would be a possibility that the reviews would not be normally distributed, or at least not as perfekt as these. 
-			<br> 
+			If the reviews were instead randomly selected from IMDB, there would be a possibility that the reviews would not be normally distributed, or at least not as perfekt as these.
+			<br>
 			This is important consider when analysing the results of the sentiment analysis.
 
 
         </div>
-		
+
 		<div class="container content">
             <h3>
                 Frequent Words in Positive and Negative Reviews
@@ -77,8 +78,8 @@
 			<br>
 			Word cloud for possitive reviews:
 			<img src="Figures/PositiveCloud.svg" width="800" height="400" name="positiveCloud">
-            
-			Based on the word cloud for the possitive reviews it can be seen that alot of the words can be linked with Disney movies. This is because Disney movies themselves often contain alot of possitive aspects such as a charming prince, a beautiful kingdom etc. 
+
+			Based on the word cloud for the possitive reviews it can be seen that alot of the words can be linked with Disney movies. This is because Disney movies themselves often contain alot of possitive aspects such as a charming prince, a beautiful kingdom etc.
 			This shows that there is some bias when doing a sentiment analysis on movie reviews, since describing a movie plot or aspects of the movie, might result in a negative review being categorized as a positive review and vice versa.
 			<br>
 			<br>
@@ -88,8 +89,8 @@
 
         </div>
 
-		 
-		
+
+
 		<div class="container content">
             <h3>
                 Correlation with the IMDB Rating
@@ -100,7 +101,7 @@
 			<img src="Figures/CorrelationSentiment.svg" width="800" height="400" name="negativeCloud">
 			<img src="Figures/CorrelationSentimentLog.svg" width="800" height="400" name="negativeCloud">
 			There are no clear dependency between IMDB ratings and sentiment scores.
-		
+
 		</div>
          <div class="container content">
             <div class="related">
