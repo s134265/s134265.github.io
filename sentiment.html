@@ -60,8 +60,8 @@
 
 			For this project the sentiment scores were calculated on all of the reviews. When the sentiment score is calculated for each review, it is possible to plot all of them in order to look at the sentiment distribution:
 			<img src="Figures/SentimentHistogram.svg" width="800" height="400" name="SentimentHist">
-			Based on the sentiment distribution it can be seen that the sentiment scores for these reviews are normally distributed. This means that the set of reviews used for this project has probably been selected, such that there are an equal amount of possitive and negative reviews.
-			If the reviews were instead randomly selected from IMDB, there would be a possibility that the reviews would not be normally distributed, or at least not as perfekt as these.
+			Based on the sentiment distribution it can be seen that the sentiment scores for these reviews are normal distributed. This means that the set of reviews used for this project has probably been selected such that there are an equal amount of possitive and negative reviews.
+			If the reviews were instead randomly selected from IMDB, there would be a possibility that the reviews would not be normal distributed, or at least not as well distributed as this one.
 			<br>
 			This is important consider when analysing the results of the sentiment analysis.
 
@@ -79,13 +79,13 @@
 			Word cloud for possitive reviews:
 			<img src="Figures/PositiveCloud.svg" width="800" height="400" name="positiveCloud">
 
-			Based on the word cloud for the possitive reviews it can be seen that alot of the words can be linked with Disney movies. This is because Disney movies themselves often contain alot of possitive aspects such as a charming prince, a beautiful kingdom etc.
+			Based on the word cloud for the possitive reviews it can be seen that alot of the words can be linked with Disney movies. This is because Disney movies themselves often contain alot of positive aspects such as a charming prince, a beautiful kingdom etc.
 			This shows that there is some bias when doing a sentiment analysis on movie reviews, since describing a movie plot or aspects of the movie, might result in a negative review being categorized as a positive review and vice versa.
 			<br>
 			<br>
 			Word cloud for negative reviews:
 			<img src="Figures/NegativeCloud.svg" width="800" height="400" name="negativeCloud">
-			In the same way as with the positive reviews it can be seen that movies and movie genres which tend to have a more negative atmosphere tend to be categorized as negative reviews, even though they might actually be good horror movies. This again shows that there is some bias when looking at the sentiment scores of movie reviews.
+			In the same way as with the positive reviews it can be seen that movies and movie genres which tend to have a more negative atmosphere tend to be categorized as negative reviews, even though they might actually be good movies. think of horror movies. A good review might be;"This movie is so scary and creep!". Not exactly well scoring on the sentiment scale. This again shows that there is some bias when looking at the sentiment scores of movie reviews.
 
         </div>
 
@@ -95,12 +95,12 @@
             <h3>
                 Correlation with the IMDB Rating
             </h3>
-			It is interesting to compare the sentiment scores with the actual movie review scores on IMDB, in order to see if there is a correlation between the positive and negative words which are used in the reviews and the actual score they give the movies.
+			This leads to the question; is there actually a connection between rating and average sentiment score of the movie? 
 			<br>
 			Plots over Sentiment and IMDB rating:
 			<img src="Figures/CorrelationSentiment.svg" width="800" height="400" name="negativeCloud">
 			<img src="Figures/CorrelationSentimentLog.svg" width="800" height="400" name="negativeCloud">
-			There are no clear dependency between IMDB ratings and sentiment scores.
+			As seen from the scatter plots, there are no clear dependency between IMDB ratings and sentiment scores even when trying to account for the number of reviews. This supports the findings from the WordClouds!
 
 		</div>
          <div class="container content">

@@ -72,7 +72,7 @@
 						</tr>
 						<tr>
 							<td class="tg-s268">name.basics.tsv.gz<br></td>
-							<td class="tg-s268">This file is used in order to get the actors names, based on their ID (nconst In file).<br></td>
+							<td class="tg-s268">This file is used in order to get the actors names based on their ID (nconst In file).<br></td>
 						</tr>
 						<tr>
 							<td class="tg-0lax">title.akas.tsv.gz<br></td>
@@ -80,7 +80,7 @@
 						</tr>
 						<tr>
 							<td class="tg-0lax">title.basics.tsv.gz</td>
-							<td class="tg-0lax">The title.basics file is used in order to remove all entries in our dataset which <br>is not movies, such as games, tv shows, etc.</td>
+							<td class="tg-0lax">The title.basics file is used in order to remove all entries in our dataset, which <br>is not movies such as games, tv shows, etc.</td>
 						</tr>
 						<tr>
 							<td class="tg-0lax">title.ratings.tsv.gz</td>
@@ -163,15 +163,15 @@
 				</p>
 
 				<p>
-					For this project it is only relevant to look at actors in movies, therefore multiple steps were conducted, in order to remove all data which didn't contain an actor or a movie.
-					In the title.principals.tsv.gz file the column "category" tells something about the specific persons role in that production. Every row which did not contain an actor, actress or self were removed.
+					For this project, it is only relevant to look at actors in movies. Therefore multiple steps were conducted in order to remove all data, which did not contain an actor or a movie.
+					In the title.principals.tsv.gz file, the column "category" tells something about the specific persons role in that production. Every row that did not contain an actor, actress or self were removed.
 				</p>
 
 				<p>
-					In order to remove productions which were not movies, the title.basics file were used. The second column is called titleType, which describe what kind of production the movie, with the given movie ID is.
+					In order to remove productions that are not movies, the title.basics file was used. The second column is called titleType, which describe what kind of production the movie is with the given movie ID.
 					These types are things such as documentary, short, videoGame, movie, tvMovie etc.
 					<br>
-					Everything which does not have either movie or tvMovie as their titleType in the title.basics file, were removed from the data, reducing it further.
+					Everything that does not have either movie or tvMovie as their titleType in the title.basics file wwas removed from the data, which reduced the size further.
 				</p>
 
 				<p>
@@ -182,14 +182,14 @@
 					<br>
 					The data can be found here: <a href="https://www.kaggle.com/utathya/imdb-review-dataset">Review data set</a>
 					<br>
-					The reviews from kaggle is within two folders, one called test and one called train. Sentiment analysis has already been conducted on most of the rewies and sorted into folders, however for this project, the already performed sentiment analysis were ignored, and sentiment analysis were performed on all 100.000 reviews.
-					Each review in the downloaded data has its own file. Besides these review files the data also contained files, containing URLs for each review. These URLs were used in order to link each review, with the corresponding movie.
+					The reviews from kaggle is within two folders; one called test and one called train. Sentiment analysis has already been conducted on most of the rewies and sorted into folders. However for this project, the already performed sentiment analysis was ignored, and sentiment analysis was performed anew on all 100.000 reviews stripped of their original labelling.
+					Each review in the downloaded data has its own file. Besides these review files, the data also contained relational files with the URLs for each review. These URLs were used in order to link each review with the corresponding movie.
 				</p>
 
 				<p>
-					Since this project is about predicting good movies based on their reviews, any movies in our dataset which does not have at least one review were removed.
+					Since this project is about predicting good movies based on their reviews, any movie in our dataset that does not have at least one review were removed.
 					<br>
-					In order to finish cleaning up the data, all links between actors and movies were either the actor or movie were not in the dataset were removed.
+					In order to finish cleaning up the data, all links between actors and movies, where either the actor or movie were not in the dataset, were removed.
 				</p>
 
 				<p>

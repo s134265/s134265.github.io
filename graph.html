@@ -60,18 +60,18 @@
             </div>
             <div class="post">
                 <p>
-					In order to analyse the cleaned data, a weighted graph over the network of actors were created. This was done by creating a list of all the actors in the data set and linking them through their movies.
-					By doing this each actors is a node in the network and each edge then corresponds to the actors being in a movie together, the weight of the edges corresponds to the amount of movies the actors have been in together.
+					In order to analyze the cleaned data, a weighted graph over the network of actors was created. This was done by creating a list of all the actors in the data set and linking them through their movies.
+					By doing this, each actor is a node in the network and each edge then corresponds to the pair of actors being in a movie together. The weight of the edges corresponds to the amount of movies the pair of actors has been in.
 					<br>
-					Each Node has two attributes, describing their name and gender. The gender attribute it used to color the nodes, by making actors blue and actresses red.
+					Each Node has two attributes, describing their name and gender. The gender attribute is used to color the nodes by making actors blue and actresses red.
 					<br>
-					The total network of all actors, ended up with a size of 16.759 nodes and around 55.000 links.
+					The total network of all actors ended up with a size of 16.759 nodes and around 55.000 links.
 					<img src="Figures/actorGraph.svg" width="800" height="800" alt="actorGraph">
 
 					As seen on the graph above, the network of all the actors are quite large with a lot of nodes and edges.
 					<br>
-					a relevant way to split up the network into smaller networks were to look at the dates, for which the movies were released.
-					The reason why it is relevant to look at the movies release year is, that people have different prefferences, not only in genres, but also in what time era the movies are from. Some like older movies and others like modern movies.
+					A relevant way to split up the network into smaller networks were to look at the dates for which the movies were released.
+					The reason why it is relevant to look at the movies release year is that people have different prefferences, not only in genres, but also in what time era the movies are from. Some like older movies and others like modern movies.
 
 					<h3>
 						Categorizing movies
@@ -84,12 +84,12 @@
 
 					Based on the histogram, it can be seen that in the time period between 1960 and 1970, almost no movies were made.
 					When looking at film history, there was a decline in the studio system which began in the 40s.
-					The reason for this was that a lot of the larger hollywood film studios were sued over a system called "block-booking" which was a system where a cinema had to buy a whole year worth of films from a company. By doing this they had to buy future movies, before they were made.
-					This lawsuit had a great impact on the movie industry and resulted in a consent agreement which stated that block booking and buying movies without seeing them first were removed.
+					The reason for this was that a lot of the larger hollywood film studios were sued over a system called "block-booking", which was a system where a cinema had to buy a whole year worth of films from a company. By doing this they had to buy future movies, before they were made.
+					This lawsuit had a great impact on the movie industry and resulted in a consent agreement, which stated that block booking and buying movies without seeing them first were removed.
 					<br>
 					As seen on the histogram, this resulted in almost no movies being made in the 60s.
 					<br>
-					in 1967 the movie "Bonnie and Clyde" were released, which is seen as the new beginning of the American movie industry. This can be seen as the year in the histogram, where movies are once again being made.[1]
+					In 1967 the movie "Bonnie and Clyde" were released, which is seen as the new beginning of the American movie industry. This can be seen as the year in the histogram, where movies are once again being made.[1]
 
 					<br>
 					Since the movie industry were once again on the rise after the 70s, it was decided to have the first time period as any movies before the 70s and then having the rest of the time periods in intervals of 10 years.
@@ -118,7 +118,7 @@
                     </script>
 					</center>
 
-					The node size is based on the outgoing strength. Therefore the node size says something about how many movies the given actor/ actress has been in.
+					The node size is based on the outgoing strength. Therefore the node size says something about how many movies the given actor/actress has been in.
 					<br>
 					For the period 1900-1970 it can be seen that some of the most active actors were John Wayne, Barbara Stanwyck and Randolph Scott.
 					When looking at these actors on IMDB it can be seen that John Wayne has been in 178 movies in the time period 1926- 1976[2], Barbara stanwyck has been in 106 movies between 1927-1986[3] and that Randolph Scott has been in 107 movies in the period 1928-1962[4].
